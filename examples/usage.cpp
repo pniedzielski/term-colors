@@ -15,13 +15,13 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    cout << termcolors::foreground_color(termcolors::colors::red)
+    cout << termcolors::foreground_color(termcolors::color::red)
          << "This is in dark red."
          << termcolors::bright
-         << "But now in bright red."
+         << "  But now in bright red."
          << endl
-         << termcolors::foreground_color(termcolors::colors::reset)
-         << termcolors::background_color(termcolors::colors::cyan)
+         << termcolors::foreground_color(termcolors::color::reset)
+         << termcolors::background_color(termcolors::color::cyan)
          << 52
          << termcolors::reset
          << endl;
