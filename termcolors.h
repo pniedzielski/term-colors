@@ -90,7 +90,7 @@ namespace termcolors {
          * Create a new manipulator object that will change the
          * terminal color to the desired background color.
          */
-        background_color(color) : newBackgroundColor(c) {}
+        background_color(color c) : newBackgroundColor(c) {}
         color newBackgroundColor; /**< The background to set */
     };
     /**
@@ -124,9 +124,9 @@ namespace termcolors {
 
 // Implementation
 #if defined(_WIN32)
-#    include <termcolors-win.inl>
+#    include "termcolors-win.inl"
 #else
-#    include <termcolors-ansi.inl>
+#    include "termcolors-ansi.inl"
 #endif
 
 #endif
