@@ -69,7 +69,7 @@ namespace termcolors {
          * Create a new manipulator object that will change the
          * terminal color to the desired foreground color.
          */
-        foreground_color(color c) : newForegroundColor(c) {}
+        explicit foreground_color(color c) : newForegroundColor(c) {}
         color newForegroundColor; /**< The text color to set */
     };
     /**
@@ -90,7 +90,7 @@ namespace termcolors {
          * Create a new manipulator object that will change the
          * terminal color to the desired background color.
          */
-        background_color(color c) : newBackgroundColor(c) {}
+        explicit background_color(color c) : newBackgroundColor(c) {}
         color newBackgroundColor; /**< The background to set */
     };
     /**
