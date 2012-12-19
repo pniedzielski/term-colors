@@ -40,7 +40,7 @@
 
 namespace termcolors {
 
-    template<typename CharT, class Traits = std::char_traits<CharT>>
+    template<typename CharT, class Traits>
         std::basic_ostream<CharT, Traits>& operator<<(
             std::basic_ostream<CharT, Traits>& out,
             const foreground_color& c) {
@@ -50,7 +50,7 @@ namespace termcolors {
         return out;
     }
 
-    template<typename CharT, class Traits = std::char_traits<CharT>>
+    template<typename CharT, class Traits>
         std::basic_ostream<CharT, Traits>& operator<<(
             std::basic_ostream<CharT, Traits>& out,
             const background_color& c) {
@@ -60,21 +60,21 @@ namespace termcolors {
         return out;
     }
 
-    template<typename CharT, class Traits = std::char_traits<CharT>>
+    template<typename CharT, class Traits>
         std::basic_ostream<CharT, Traits>& bright(
             std::basic_ostream<CharT, Traits>& out) {
         out << "\033[1m";
         return out;
     }
     
-    template<typename CharT, class Traits = std::char_traits<CharT>>
+    template<typename CharT, class Traits>
         std::basic_ostream<CharT, Traits>& normal(
             std::basic_ostream<CharT, Traits>& out) {
         out << "\033[22m";
         return out;
     }
 
-    template<typename CharT, class Traits = std::char_traits<CharT>>
+    template<typename CharT, class Traits>
         std::basic_ostream<CharT, Traits>& reset(
             std::basic_ostream<CharT, Traits>& out) {
         out << "\033[0m";
