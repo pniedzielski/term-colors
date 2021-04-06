@@ -52,14 +52,14 @@ namespace termcolors {
         HANDLE out_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 
         // Get current info for finding current background.
-        PCONSOLE_SCREEN_BUFFER_INFO info;
+        CONSOLE_SCREEN_BUFFER_INFO info;
         WORD attributes;
-        if (0 == GetConsoleScreenBufferInfo(out_handle, info)) {
+        if (0 == GetConsoleScreenBufferInfo(out_handle, &info)) {
             // Error.  Don't do anything but set the error flag.
             out.setstate(std::ios_base::badbit);
             return out;
         }
-        attributes = info->wAttributes;
+        attributes = info.wAttributes;
 
         // Clear out foreground attributes;
         attributes &= !(FOREGROUND_BLUE | FOREGROUND_GREEN |
@@ -104,14 +104,14 @@ namespace termcolors {
         HANDLE out_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 
         // Get current info for finding current background.
-        PCONSOLE_SCREEN_BUFFER_INFO info;
+        CONSOLE_SCREEN_BUFFER_INFO info;
         WORD attributes;
-        if (0 == GetConsoleScreenBufferInfo(out_handle, info)) {
+        if (0 == GetConsoleScreenBufferInfo(out_handle, &info)) {
             // Error.  Don't do anything but set the error flag.
             out.setstate(std::ios_base::badbit);
             return out;
         }
-        attributes = info->wAttributes;
+        attributes = info.wAttributes;
 
         // Clear out foreground attributes;
         attributes &= !(BACKGROUND_BLUE | BACKGROUND_GREEN |
@@ -155,14 +155,14 @@ namespace termcolors {
         HANDLE out_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 
         // Get current info for finding current background.
-        PCONSOLE_SCREEN_BUFFER_INFO info;
+        CONSOLE_SCREEN_BUFFER_INFO info;
         WORD attributes;
-        if (0 == GetConsoleScreenBufferInfo(out_handle, info)) {
+        if (0 == GetConsoleScreenBufferInfo(out_handle, &info)) {
             // Error.  Don't do anything but set the error flag.
             out.setstate(std::ios_base::badbit);
             return out;
         }
-        attributes = info->wAttributes | FOREGROUND_INTENSITY
+        attributes = info.wAttributes | FOREGROUND_INTENSITY
             | BACKGROUND_INTENSITY;
 
         // Set it.
@@ -183,14 +183,14 @@ namespace termcolors {
         HANDLE out_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 
         // Get current info for finding current background.
-        PCONSOLE_SCREEN_BUFFER_INFO info;
+        CONSOLE_SCREEN_BUFFER_INFO info;
         WORD attributes;
-        if (0 == GetConsoleScreenBufferInfo(out_handle, info)) {
+        if (0 == GetConsoleScreenBufferInfo(out_handle, &info)) {
             // Error.  Don't do anything but set the error flag.
             out.setstate(std::ios_base::badbit);
             return out;
         }
-        attributes = info->wAttributes | !FOREGROUND_INTENSITY
+        attributes = info.wAttributes | !FOREGROUND_INTENSITY
             | !BACKGROUND_INTENSITY;
 
         // Set it.
